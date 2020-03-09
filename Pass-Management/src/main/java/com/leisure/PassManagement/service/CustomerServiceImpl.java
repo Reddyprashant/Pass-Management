@@ -17,10 +17,13 @@ public class CustomerServiceImpl implements ICustomerService {
     /**
      * Validate the paramters for saveCustomer such that no parameter is null, empty or negative, else throw BadRequestException
      *
-     * @param customer add Customer to the system
+     * @param customers add Customer to the system
      */
     @Override
-    public Customer saveCustomer(Customer customer) {
+    public Customer saveCustomer(Customer customers) {
+
+          Customer customer = customerRepository.findById(customers.getCustomerId())
+                   .orElseThrow(()-> new BadRequestException("customer with this ID already exists in the system"));
 
         if (!customer.getCustomerId().isEmpty() && !customer.getCustomerCity().isEmpty() && !customer.getCustomerName().isEmpty()) {
 
