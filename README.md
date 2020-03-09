@@ -48,18 +48,18 @@ Maven build to build an application or run application by IDE
        
 ### /pass/cancel/{passId}
     
-        parameter:
-       passid:  String UUID
+       parameter:
+        passid:  String UUID
        
        If pass with input passId is present in the system then it will be cancelled else throw not found error
        
  
 ### /vendor/{vendorId}/pass/{passId}
-        parameters:
-    customerId: String
-    vendorId:  String UUID
+      parameters:
+       customerId: String
+       vendorId:  String UUID
     
-    return whether pass is valid or not by checking with the expiry date of pass and checking whether Vednor with the input vendorId has issues the pass with passId
+     return whether pass is valid or not by checking with the expiry date of pass and checking whether Vednor with the input vendorId has issues the pass with passId
     
 
 ##API Documentation using Swagger:
